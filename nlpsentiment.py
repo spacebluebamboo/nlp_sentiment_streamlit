@@ -1,7 +1,7 @@
 from fastbook import *
 import streamlit as st
 
-import os.path import exists
+from os.path import exists
 # import gdown
 
 #next bit needed for windows
@@ -26,6 +26,9 @@ def loads():
             
 
             urllib.request.urlretrieve(url, filename)
+        return []
+    else:
+        
 
 
 loads()
