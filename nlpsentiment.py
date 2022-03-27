@@ -1,10 +1,10 @@
 from fastbook import *
 import streamlit as st
-import pathlib
+# import pathlib
 import gdown
 
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+# temp = pathlib.PosixPath
+# pathlib.PosixPath = pathlib.WindowsPath
 
 
 @st.cache(allow_output_mutation=True)
