@@ -1,7 +1,8 @@
 from fastbook import *
 import streamlit as st
 
-import gdown
+import os.path import exists
+# import gdown
 
 #next bit needed for windows
 # import pathlib
@@ -11,7 +12,7 @@ import gdown
 
 @st.cache(allow_output_mutation=True)
 def loads():
-    from os.path import exists
+    
     filename = 'IMDB_class_model_export.pkl'
     file_exists = exists(filename)
 
@@ -29,7 +30,6 @@ def loads():
 
 loads()
 
-import os
 filename = 'IMDB_class_model_export.pkl'
 file_exists = exists(filename)
 file_exists
