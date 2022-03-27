@@ -1,8 +1,10 @@
 from fastbook import *
 import streamlit as st
-# import pathlib
+
 import gdown
 
+#next bit needed for windows
+# import pathlib
 # temp = pathlib.PosixPath
 # pathlib.PosixPath = pathlib.WindowsPath
 
