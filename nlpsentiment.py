@@ -20,7 +20,7 @@ def loads():
     if not f_checkpoint.exists():
         with st.spinner("Downloading model... this may take a while! \n Don't stop it!"):
 
-            import urllib 
+            import urllib.request
 
 
             url='https://github.com/spacebluebamboo/nlp_sentiment_streamlit/releases/download/V2/IMDB_class_model_export.pkl'
@@ -36,18 +36,18 @@ def loads():
     return learner
 
 learner = loads()
-txta = st.text_area('Enter text') 
+# txta = st.text_area('Enter text') 
 
-ll = learner.predict(txta)
+# ll = learner.predict(txta)
 
-scora = 100-int(ll[2][0]*100)
-sent = ll[0]
-if sent=='pos':
-    sent='Positive'
-elif sent=='neg':
-    sent='Negative'
-else:
-    sent='??'
+# scora = 100-int(ll[2][0]*100)
+# sent = ll[0]
+# if sent=='pos':
+#     sent='Positive'
+# elif sent=='neg':
+#     sent='Negative'
+# else:
+#     sent='??'
 
-st.title("Rating =  {}  / 100".format(scora))
-st.title("Overall sentiment is {}".format(sent) )
+# st.title("Rating =  {}  / 100".format(scora))
+# st.title("Overall sentiment is {}".format(sent) )

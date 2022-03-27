@@ -1,3 +1,2 @@
-pathlib2
 fastbook
 gdown
