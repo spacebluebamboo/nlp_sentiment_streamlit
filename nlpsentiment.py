@@ -27,7 +27,7 @@ def loads():
 
             urllib.request.urlretrieve(url, filename)
         return []
-    else:
+    
         
 
 
