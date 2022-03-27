@@ -10,7 +10,7 @@ def loads():
     import gdown
 
     url = 'https://drive.google.com/uc?id=1F3Qi5s4FJiRGC5hBrAoOpKBLJ9HzvAft'
-    output = 'IMDB_class_model_export2.pkl'
+    output = 'IMDB_class_model_export.pkl'
     gdown.download(url, output, quiet=False)
     learner = load_learner('IMDB_class_model_export.pkl')
     return learner
