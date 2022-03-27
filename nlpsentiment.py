@@ -39,18 +39,18 @@ filename = 'IMDB_class_model_export.pkl'
 file_exists = exists(filename)
 file_exists
 
-# txta = st.text_area('Enter text') 
+txta = st.text_area('Enter text') 
 
-# ll = learner.predict(txta)
+ll = learner.predict(txta)
 
-# scora = 100-int(ll[2][0]*100)
-# sent = ll[0]
-# if sent=='pos':
-#     sent='Positive'
-# elif sent=='neg':
-#     sent='Negative'
-# else:
-#     sent='??'
+scora = 100-int(ll[2][0]*100)
+sent = ll[0]
+if sent=='pos':
+    sent='Positive'
+elif sent=='neg':
+    sent='Negative'
+else:
+    sent='??'
 
-# st.title("Rating =  {}  / 100".format(scora))
-# st.title("Overall sentiment is {}".format(sent) )
+st.title("Rating =  {}  / 100".format(scora))
+st.title("Overall sentiment is {}".format(sent) )
