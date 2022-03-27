@@ -1,18 +1,36 @@
 from fastbook import *
 import streamlit as st
-# import pathlib
-# temp = pathlib.PosixPath
-# pathlib.PosixPath = pathlib.WindowsPath
+import pathlib
+import gdown
+
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath
 
 
 @st.cache(allow_output_mutation=True)
 def loads():
-    import gdown
+    
+    save_dest = Path('model')
+    save_dest.mkdir(exist_ok=True)
+    
+    f_checkpoint = Path("model/IMDB_class_model_export.pklt")
 
-    url = 'https://drive.google.com/uc?id=1F3Qi5s4FJiRGC5hBrAoOpKBLJ9HzvAft'
-    output = 'IMDB_class_model_export.pkl'
-    gdown.download(url, output, quiet=False)
-    learner = load_learner('IMDB_class_model_export.pkl')
+    if not f_checkpoint.exists():
+        with st.spinner("Downloading model... this may take a while! \n Don't stop it!"):
+
+            import urllib 
+
+
+            url='https://github.com/spacebluebamboo/nlp_sentiment_streamlit/releases/download/V2/IMDB_class_model_export.pkl'
+            filename =  url.split('/')[-1]
+
+            urllib.request.urlretrieve(url, filename)
+#             url = 'https://drive.google.com/uc?id=1F3Qi5s4FJiRGC5hBrAoOpKBLJ9HzvAft'
+# #             output = f_checkpoint#'IMDB_class_model_export.pkl'
+# #             gdown.download(url, output, quiet=False)
+#             from GD_download import download_file_from_google_drive
+#             download_file_from_google_drive(url, f_checkpoint)
+    learner = load_learner(f_checkpoint, map_location=device)
     return learner
 
 learner = loads()
