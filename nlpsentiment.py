@@ -30,8 +30,8 @@ def loads():
 # #             gdown.download(url, output, quiet=False)
 #             from GD_download import download_file_from_google_drive
 #             download_file_from_google_drive(url, f_checkpoint)
-        learner = load_learner(f_checkpoint, map_location=device)
-        return learner
+    learner = load_learner(f_checkpoint)
+    return learner
 
 learner = loads()
 txta = st.text_area('Enter text') 
