@@ -27,11 +27,13 @@ def loads():
 
             urllib.request.urlretrieve(url, filename)
         return []
-    
+    else:
+        learner = load_learner(filename)
+        return learner
         
 
 
-loads()
+learner=loads()
 
 filename = 'IMDB_class_model_export.pkl'
 file_exists = exists(filename)
