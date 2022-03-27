@@ -40,6 +40,11 @@ learner=loads()
 # Stuff on streamlit
 txta = st.text_area('Enter text') 
 
+if st.button('Run'):
+   ll = learner.predict(txta)      
+
+        
+
 ll = learner.predict(txta)
 
 scora = 100-int(ll[2][0]*100)
