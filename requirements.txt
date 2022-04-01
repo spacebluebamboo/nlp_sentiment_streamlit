@@ -3,4 +3,3 @@ gdown
 pandas
 wordcloud
 matplotlib
-nltk
