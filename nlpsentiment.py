@@ -103,9 +103,39 @@ elif choiBIG==chois[2]:
     if choi2BIG==chois2[0]:#dataframe
         st.dataframe(df)
     elif choi2BIG==chois2[1]:#word cloud
+        
+        # all
+        'All'
         texta=[]
         for ii,dada in enumerate(df.index):
             texta.append( df.iloc[ii,0]  )
+        texta=''.join(texta)
+        wordcloud = WordCloud(max_font_size=40,min_word_length=3).generate(texta)
+        fig=plt.figure();
+        plt.imshow(wordcloud, interpolation="bilinear")
+        plt.axis("off")
+        st.pyplot(fig)
+        
+        #positive
+        'Positive'
+        texta=[]
+        for ii,dada in enumerate(df.index):
+            if df.iloc[ii,1]>0.5:
+                texta.append( df.iloc[ii,0]  )
+        texta=''.join(texta)
+        wordcloud = WordCloud(max_font_size=40,min_word_length=3).generate(texta)
+        fig=plt.figure();
+        plt.imshow(wordcloud, interpolation="bilinear")
+        plt.axis("off")
+        st.pyplot(fig)
+        
+        
+        #negative
+        'Negative'
+        texta=[]
+        for ii,dada in enumerate(df.index):
+            if df.iloc[ii,1]<=0.5:
+                texta.append( df.iloc[ii,0]  )
         texta=''.join(texta)
         wordcloud = WordCloud(max_font_size=40,min_word_length=3).generate(texta)
         fig=plt.figure();
