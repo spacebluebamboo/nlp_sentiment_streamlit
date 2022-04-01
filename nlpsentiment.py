@@ -41,7 +41,7 @@ def loads():
 
 # @st.cache(allow_output_mutation=True)
 def loadCSV():
-    df = pd.read_csv('./EldenReview.csv')
+    df = pd.read_csv('EldenReview.csv', engine = 'python')
     
     scoreALL=[]
     scoreALL2=[]
