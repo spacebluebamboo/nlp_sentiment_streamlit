@@ -5,7 +5,8 @@ from os.path import exists
 import pandas as pd
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-# import nltk
+import nltk
+nltk.download()
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # #next bit needed for windows
