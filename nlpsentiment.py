@@ -39,10 +39,9 @@ def loads():
         learner = load_learner(filename)
         return learner
 
-@st.cache(allow_output_mutation=True)
-def loadCSV(uploaded_file):
-    
-    df = df = pd.read_csv(uploaded_file)#pd.read_csv('./EldenReview.csv')
+# @st.cache(allow_output_mutation=True)
+def loadCSV():
+    df = pd.read_csv('./EldenReview.csv')
     
     scoreALL=[]
     scoreALL2=[]
@@ -96,16 +95,10 @@ if choiBIG==chois[0]:
 # a given text file
 elif choiBIG==chois[2]:
     
-    uploaded_file = st.file_uploader("Choose a file")
-    
     # a selection box load data or one piece
     chois2=['Data Frame','Word Cloud','Score Pie','Score Histogram','Plot scores']
     choi2BIG=st.sidebar.radio('Select', chois2)
-    
-    
-    df = loadCSV(uploaded_file)
-    
-    
+    df = loadCSV()
     if choi2BIG==chois2[0]:#dataframe
         st.dataframe(df)
     elif choi2BIG==chois2[1]:#word cloud
