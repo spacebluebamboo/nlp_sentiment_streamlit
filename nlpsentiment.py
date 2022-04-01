@@ -40,7 +40,7 @@ def loads():
         learner = load_learner(filename)
         return learner
 
-# @st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True)
 def loadCSV():
     df = pd.read_csv('EldenReview.csv', encoding='cp1252')
     
